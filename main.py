@@ -35,11 +35,8 @@ class Board(object):
         """Set the mark on the board given the mark. The position is in the form
         of a string with column and row values."""
         #Ex: mark : A1, A3, B3
-        #if tuple(position) in self.board.keys():
         self.board[tuple(position)] = mark
-        #    return True
-        #print "Enter a valid position."
-        #return False
+
     
     def game_is_done(self):
         """Check if the game is done and return True or False."""
@@ -89,8 +86,6 @@ class Player(object):
             position = raw_input("It's player {}'s turn, Enter the position: ".format(self.mark))
             if self.valid_move(position, board):
                 board.set_mark(self.mark, position)
-                #if len(board.empty_slots) > 0:
-                #    print "Player {0} won the game.".format(self.mark)
                 break
             print "Please enter a valid position."
            
@@ -126,21 +121,6 @@ def tic_tac_toe_engine():
         
     
 def main():
-    """
-    p1 = Player("X")
-    b = Board()
-    print b.empty_slots
-    p1.get_move(b)
-    
-    b.display_board()
-    p1.get_move(b)
-
-
-    print b.empty_slots
-    b.display_board()
-    
-    print b.game_is_done()
-    """
     tic_tac_toe_engine()
     
     
